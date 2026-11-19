@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background: #2d1b7a;
+  }
+  body {
+    @apply bg-night font-sans text-white antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border-2 border-ink px-6 text-base font-bold text-ink transition-transform active:translate-x-[2px] active:translate-y-[2px];
+  }
+  .btn-sun {
+    @apply btn bg-sun shadow-pop-sm;
+  }
+  .btn-mint {
+    @apply btn bg-mint shadow-pop-sm;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-white shadow-pop-sm;
+  }
+  .btn-big {
+    @apply min-h-[56px] px-8 text-lg shadow-pop;
+  }
+  /* Карточки цветные: цвет задаётся классом bg-* рядом, по умолчанию мятный */
+  .card {
+    @apply rounded-3xl border-2 border-ink bg-mint p-5 text-ink;
+  }
+  .card-pop {
+    @apply card shadow-pop;
+  }
+  .chip {
+    @apply inline-flex min-h-[44px] items-center rounded-full border-2 border-ink px-4 text-sm font-bold text-ink;
+  }
+  /* Поля тёмные, чтобы не было белых пятен на цветных карточках */
+  .field {
+    @apply w-full rounded-2xl border-2 border-ink bg-ink px-4 py-3 text-base text-white placeholder:text-white/60;
+  }
+  .h-display {
+    @apply font-display font-extrabold tracking-tight;
+  }
+}
